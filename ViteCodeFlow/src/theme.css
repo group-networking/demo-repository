@@ -1,0 +1,21 @@
+body.light {
+  --bg: #f5f3ff;
+  --text: #1f2937;
+  --card: #ffffff;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #020617;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.color {
+  color: black;
+}

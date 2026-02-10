@@ -1,0 +1,115 @@
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-content {
+  flex: 1; /* ocupa todo espaço restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.center-content h1 {
+  font-size: 42px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.center-content p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.text-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cardfree,
+.cardpremium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardfree {
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border: 2px solid #e0e0e0;
+}
+
+.cardfree:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cardpremium {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border: 2px solid #6d28d9;
+  color: white;
+}
+
+.cardpremium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(139, 92, 246, 0.4);
+}
+
+.cardpremium h3,
+.cardpremium p {
+  color: white;
+}
+
+.btn-plano-gratis,
+.btn-plano-premium {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-plano-gratis {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 2px solid #999;
+}
+
+.btn-plano-gratis:hover {
+  background-color: #d0d0d0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-plano-gratis:active {
+  transform: scale(0.98);
+}
+
+.btn-plano-premium {
+  background-color: #ffffff;
+  color: #7c3aed;
+  border: 2px solid #ffffff;
+}
+
+.btn-plano-premium:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.btn-plano-premium:active {
+  transform: scale(0.98);
+}

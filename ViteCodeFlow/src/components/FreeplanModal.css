@@ -1,0 +1,267 @@
+.freeplan-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.freeplan-modal-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.freeplan-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.freeplan-modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.freeplan-modal-body {
+  padding: 30px;
+}
+
+.plan-description {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border-radius: 12px;
+  border-left: 4px solid #10b981;
+}
+
+.plan-description .main-text {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+  color: #047857;
+  font-weight: 500;
+}
+
+.plan-description .price {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.advantage-card {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.advantage-card:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.advantage-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.advantage-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.advantage-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.upgrade-info {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.upgrade-info p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.upgrade-info strong {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.freeplan-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  border-top: 2px solid #f3f4f6;
+  background: #fafbfc;
+  border-radius: 0 0 16px 16px;
+}
+
+.btn-close,
+.btn-success {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-close {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-close:hover {
+  background: #d1d5db;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+}
+
+/* Scrollbar customizado */
+.freeplan-modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.freeplan-modal-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.freeplan-modal-container::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+.freeplan-modal-container::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .freeplan-modal-container {
+    max-width: 95%;
+  }
+
+  .freeplan-modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .plan-description .price {
+    font-size: 2rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .advantage-card {
+    padding: 12px;
+  }
+
+  .advantage-icon {
+    font-size: 2rem;
+  }
+
+  .advantage-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .advantage-card p {
+    font-size: 0.75rem;
+  }
+
+  .btn-close,
+  .btn-success {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

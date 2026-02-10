@@ -1,0 +1,210 @@
+.navbar {
+  background: var(--primary);
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-buttons button {
+  background: transparent;
+  border: 1px solid white;
+  color: rgb(8, 8, 8);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-buttons button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.profile-btn {
+  background: transparent; /* permite que a imagem preencha todo o quadrado */
+  color: var(--primary);
+  border-radius: 8px; /* quadrado com cantos arredondados */
+  width: 36px;
+  height: 36px;
+
+  display: flex; /* ⬅️ ESSENCIAL */
+  align-items: center; /* ⬅️ ESSENCIAL */
+  justify-content: center; /* ⬅️ ESSENCIAL */
+
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* remove deslocamento */
+  overflow: hidden; /* garante que a imagem não vazará do contêiner */
+  background-size: cover; /* garante que a imagem de fundo preencha */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.primary {
+  background-color: transparent;
+}
+
+/* Hover sem apagar a imagem */
+.profile-btn:hover {
+  filter: brightness(0.9);
+  transform: scale(1.03);
+}
+
+.nav-buttons button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== BOTÃO DE PERFIL ===== */
+.profile-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none; /* remove borda que encolhe a imagem */
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+
+  display: flex;
+  align-items: stretch; /* 🔥 importante */
+  justify-content: stretch;
+
+  overflow: hidden;
+}
+
+/* IMAGEM DO PERFIL */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.profile-btn img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* SOBRESCREVE o padding global dos botões */
+.nav-buttons .profile-btn {
+  padding: 0 !important;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+.profile-btn {
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* imagem ocupa tudo */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Remove qualquer borda do botão de perfil */
+.nav-buttons .profile-btn {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Garante que a imagem não tenha borda */
+.profile-img {
+  border: none;
+}
+.profile-btn:focus,
+.profile-btn:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.buttonprocurar {
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  margin: 3px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.inputprocurar {
+  width: 250px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: black;
+}
+
+.inputprocurar::placeholder {
+  color: black;
+}
+
+input:hover {
+  border: 1px solid black;
+}
+/* ===== BOTÃO DE UPLOAD (+) ===== */
+.upload-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  border: 2px solid rgba(8, 8, 8, 0.3) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+  color: rgb(8, 8, 8);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+.upload-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgb(8, 8, 8) !important;
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.upload-btn:active {
+  transform: scale(0.95);
+}
+
+/* Garante cursor pointer */
+.upload-btn,
+.profile-btn {
+  cursor: pointer;
+}
+
+.upload-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
