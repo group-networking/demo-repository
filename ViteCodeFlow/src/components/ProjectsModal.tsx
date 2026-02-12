@@ -32,8 +32,7 @@ export default function ProjectsModal({ onClose }: { onClose: () => void }) {
     }
     return [];
   });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [, setLoading] = useState(false);
   const [editingProject, setEditingProject] = useState<string | null>(null);
   const [projectName, setProjectName] = useState("");
   const [newProjectName, setNewProjectName] = useState("");

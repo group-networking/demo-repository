@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 
 type Theme = "light" | "dark";
 
@@ -31,4 +31,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+// ✅ ADICIONE ISSO AQUI
+export function useTheme() {
+  return useContext(ThemeContext);
 }

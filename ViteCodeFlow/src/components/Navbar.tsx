@@ -4,7 +4,6 @@ import RegisterModal from "./RegisterModal";
 import AboutModal from "./AboutModal";
 import SettingsModal from "./SettingsModal";
 import ProjectsModal from "./ProjectsModal";
-import ProfileAvatar from "./ProfileAvatar";
 import { useAuth } from "../contexts/AuthContext";
 import "./Navbar.css";
 
