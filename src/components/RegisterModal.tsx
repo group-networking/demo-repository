@@ -9,8 +9,35 @@ type Props = {
 export default function RegisterModal({ onClose, onOpenLogin }: Props) {
   const { t } = useLanguage();
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    const form = e.currentTarget;
+    const name = (form[0] as HTMLInputElement).value;
+    const email = (form[1] as HTMLInputElement).value;
+    const password = (form[2] as HTMLInputElement).value;
+
+    try {
+      const response = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message);
+        return;
+      }
+
+      alert("Conta criada com sucesso!");
+      onOpenLogin?.();
+    } catch (error) {
+      alert("Erro ao conectar com o servidor");
+    }
   }
 
   return (
