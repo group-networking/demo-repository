@@ -4,6 +4,8 @@ import PaymentModal from "../components/PaymentModal";
 import FreePlanModal from "../components/FreePlanModal";
 import { useAuth } from "../contexts/AuthContext";
 import "./Index.css";
+import Footer from "../components/Footer";
+
 
 export default function Index() {
   const { user } = useAuth();
@@ -15,9 +17,8 @@ export default function Index() {
   const [freePlanModal, setFreePlanModal] = useState(false);
 
   return (
-    <>
+    <div className="page-container">
       <Navbar />
-
       <main className="p-10 text-center">
         {user ? (
           <>
@@ -36,54 +37,54 @@ export default function Index() {
             <br></br>
             <div className="plano flex justify-around">
               <fieldset className="w-1/3">
-              <div className="cardfree">
-                <h3 className="text-xl font-semibold mb-2">Plano Grátis</h3>
-                <p className="text-gray-700 mb-4">
-                  Acesso básico para começar sua jornada.
-                </p>
-                <p className="text-gray-900 font-bold text-2xl">R$0/mês</p>
-                <ul className="mt-4 text-sm text-gray-600">
-                  <li>✓ Seguidores básicos;</li>
-                  <li>✓ Suporte de segurança padrão.</li>
-                </ul>
-                <button
-                  id="btn-plano-gratis"
-                  className="btn-plano-gratis mt-6"
-                  onClick={() => setFreePlanModal(true)}
-                >
-                  Começar Agora
-                </button>
-              </div>
+                <div className="cardfree">
+                  <h3 className="text-xl font-semibold mb-2">Plano Grátis</h3>
+                  <p className="text-gray-700 mb-4">
+                    Acesso básico para começar sua jornada.
+                  </p>
+                  <p className="text-gray-900 font-bold text-2xl">R$0/mês</p>
+                  <ul className="mt-4 text-sm text-gray-600">
+                    <li>✓ Seguidores básicos;</li>
+                    <li>✓ Suporte de segurança padrão.</li>
+                  </ul>
+                  <button
+                    id="btn-plano-gratis"
+                    className="btn-plano-gratis mt-6"
+                    onClick={() => setFreePlanModal(true)}
+                  >
+                    Começar Agora
+                  </button>
+                </div>
               </fieldset>
 
               <fieldset className="w-1/3">
-              <div className="cardpremium">
-                <h3 className="text-xl font-semibold mb-2">Plano Premium</h3>
-                <p className="mb-4">
-                  Recursos avançados para usuários dedicados.
-                </p>
-                <p className="font-bold text-2xl">R$19,99/mês</p>
-                <ul className="mt-4 text-sm">
-                  <li>✓ Seguidores de Confiança;</li>
-                  <li>✓ Sem anúncios no site (se tiver);</li>
-                  <li>✓ Suporte de segurança avançado;</li>
-                  <li>✓ E muito mais!</li>
-                </ul>
-                <button
-                  id="btn-plano-premium"
-                  className="btn-plano-premium mt-6"
-                  onClick={() =>
-                    setPaymentModal({
-                      isOpen: true,
-                      planName: "Premium",
-                      price: 19.99,
-                    })
-                  }
-                >
-                  Assinar Agora
-                </button>
+                <div className="cardpremium">
+                  <h3 className="text-xl font-semibold mb-2">Plano Premium</h3>
+                  <p className="mb-4">
+                    Recursos avançados para usuários dedicados.
+                  </p>
+                  <p className="font-bold text-2xl">R$19,99/mês</p>
+                  <ul className="mt-4 text-sm">
+                    <li>✓ Seguidores de Confiança;</li>
+                    <li>✓ Sem anúncios no site (se tiver);</li>
+                    <li>✓ Suporte de segurança avançado;</li>
+                    <li>✓ E muito mais!</li>
+                  </ul>
+                  <button
+                    id="btn-plano-premium"
+                    className="btn-plano-premium mt-6"
+                    onClick={() =>
+                      setPaymentModal({
+                        isOpen: true,
+                        planName: "Premium",
+                        price: 19.99,
+                      })
+                    }
+                  >
+                    Assinar Agora
+                  </button>
                 </div>
-            </fieldset>
+              </fieldset>
             </div>
           </>
         )}
@@ -102,6 +103,7 @@ export default function Index() {
         isOpen={freePlanModal}
         onClose={() => setFreePlanModal(false)}
       />
-    </>
+      <Footer />  { }
+    </div>
   );
 }

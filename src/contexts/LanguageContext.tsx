@@ -29,7 +29,7 @@ const texts = {
     },
     about: {
       title: "Sobre",
-      text: "NetWorking CodeFlow é uma plataforma para desenvolvedores se conectarem, trocarem ideias e colaborarem em tempo real.",
+      text: "NetWorking CodeFlow é uma plataforma para desenvolvedores se conectarem, trocarem ideias e colaborarem em tempo real. versão 1.2.0",
       close: "Fechar",
     },
     projects: {
@@ -75,7 +75,7 @@ const texts = {
     },
     about: {
       title: "About",
-      text: "NetWorking CodeFlow is a platform for developers to connect, exchange ideas and collaborate in real time.",
+      text: "NetWorking CodeFlow is a platform for developers to connect, exchange ideas and collaborate in real time. version 1.2.0",
       close: "Close",
     },
     projects: {

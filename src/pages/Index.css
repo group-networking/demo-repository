@@ -5,7 +5,8 @@
 }
 
 .center-content {
-  flex: 1; /* ocupa todo espaço restante */
+  flex: 1;
+  /* ocupa todo espaço restante */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,4 +113,14 @@
 
 .btn-plano-premium:active {
   transform: scale(0.98);
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
 }

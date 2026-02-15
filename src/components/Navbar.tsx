@@ -6,7 +6,8 @@ import SettingsModal from "./SettingsModal";
 import ProjectsModal from "./ProjectsModal";
 import { useAuth } from "../contexts/AuthContext";
 import "./Navbar.css";
-
+import NotificationsModal from "./NotificationsModal";
+import PagesModal from "./PagesModal";
 import { useLanguage } from "../contexts/LanguageContext";
 import { ProfileContext } from "../contexts/ProfileContext";
 
@@ -20,6 +21,9 @@ export default function Navbar() {
   const { user } = useAuth();
   const { photo } = useContext(ProfileContext);
   const avatarUrl = user?.avatar || photo || "https://via.placeholder.com/80";
+  const [notifications, setNotifications] = useState(false);
+  const [notificationCount, setNotificationCount] = useState(3);
+  const [pagesModal, setPagesModal] = useState(false);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -71,6 +75,37 @@ export default function Navbar() {
         </div>
 
         <div className="nav-buttons">
+        </div>
+
+
+        <div className="nav-buttons">
+          {/* Botão de Notificações */}
+          <button
+            className="notification-btn"
+            onClick={() => {
+              setNotifications(true);
+              setNotificationCount(0); // zera quando abrir
+            }}
+            title="Notificações"
+            aria-label="Notificações"
+          >
+            🔔
+
+            {notificationCount > 0 && (
+              <span className="notification-badge">
+                {notificationCount}
+              </span>
+            )}
+          </button>
+
+          <button
+            className="pages-btn"
+            onClick={() => setPagesModal(true)}
+          >
+            📂 Páginas
+          </button>
+
+
           <button className="sobre" onClick={() => setAbout(true)}>
             {t.navbar.about}
           </button>
@@ -79,14 +114,6 @@ export default function Navbar() {
           <button onClick={() => setProjects(true)}>{t.navbar.projects}</button>
 
           {/* Botão de Upload de Arquivos */}
-          <button
-            className="upload-btn"
-            onClick={() => document.getElementById("file-input")?.click()}
-            title="Adicionar arquivo"
-            aria-label="Adicionar arquivo"
-          >
-            +
-          </button>
           <input
             id="file-input"
             type="file"
@@ -129,6 +156,14 @@ export default function Navbar() {
       {about && <AboutModal onClose={() => setAbout(false)} />}
       {settings && <SettingsModal onClose={() => setSettings(false)} />}
       {projects && <ProjectsModal onClose={() => setProjects(false)} />}
+
+      {notifications && (
+        <NotificationsModal onClose={() => setNotifications(false)} />
+      )}
+      {pagesModal && (
+        <PagesModal onClose={() => setPagesModal(false)} />
+      )}
+
     </>
   );
 }

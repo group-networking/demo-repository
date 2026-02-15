@@ -27,22 +27,30 @@
 }
 
 .profile-btn {
-  background: transparent; /* permite que a imagem preencha todo o quadrado */
+  background: transparent;
+  /* permite que a imagem preencha todo o quadrado */
   color: var(--primary);
-  border-radius: 8px; /* quadrado com cantos arredondados */
+  border-radius: 8px;
+  /* quadrado com cantos arredondados */
   width: 36px;
   height: 36px;
 
-  display: flex; /* ⬅️ ESSENCIAL */
-  align-items: center; /* ⬅️ ESSENCIAL */
-  justify-content: center; /* ⬅️ ESSENCIAL */
+  display: flex;
+  /* ⬅️ ESSENCIAL */
+  align-items: center;
+  /* ⬅️ ESSENCIAL */
+  justify-content: center;
+  /* ⬅️ ESSENCIAL */
 
   font-size: 18px;
   border: none;
   cursor: pointer;
-  padding: 0; /* remove deslocamento */
-  overflow: hidden; /* garante que a imagem não vazará do contêiner */
-  background-size: cover; /* garante que a imagem de fundo preencha */
+  padding: 0;
+  /* remove deslocamento */
+  overflow: hidden;
+  /* garante que a imagem não vazará do contêiner */
+  background-size: cover;
+  /* garante que a imagem de fundo preencha */
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -66,13 +74,15 @@
   width: 40px;
   height: 40px;
   padding: 0;
-  border: none; /* remove borda que encolhe a imagem */
+  border: none;
+  /* remove borda que encolhe a imagem */
   border-radius: 8px;
   cursor: pointer;
   background: transparent;
 
   display: flex;
-  align-items: stretch; /* 🔥 importante */
+  align-items: stretch;
+  /* 🔥 importante */
   justify-content: stretch;
 
   overflow: hidden;
@@ -134,6 +144,7 @@
 .profile-img {
   border: none;
 }
+
 .profile-btn:focus,
 .profile-btn:active {
   outline: none;
@@ -166,6 +177,7 @@
 input:hover {
   border: 1px solid black;
 }
+
 /* ===== BOTÃO DE UPLOAD (+) ===== */
 .upload-btn {
   width: 40px;
@@ -207,4 +219,130 @@ input:hover {
 .upload-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Notificação */
+.notification-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.notification-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Bolinha vermelha de notificação */
+.nav-buttons button::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+}
+
+.notification-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.notification-btn:hover {
+  transform: scale(1.1);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.notifications-list {
+  margin-top: 15px;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.notification-item:hover {
+  background: #f5f5f5;
+}
+
+.nav-buttons button {
+  background: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+}
+
+.nav-buttons button:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.nav-buttons button:hover {
+  background: rgba(120, 0, 255, 0.1);
+  box-shadow: 0 0 8px rgba(120, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.nav-buttons button {
+  position: relative;
+}
+
+.nav-buttons button::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-buttons button:hover::after {
+  width: 100%;
+}
+
+.pages-btn {
+  font-weight: 500;
 }
