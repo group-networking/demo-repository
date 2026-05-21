@@ -1,0 +1,25 @@
+{
+  "name": "root/nginx",
+  "autoload": {
+    "psr-4": {
+      "src\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/"
+    }
+  },
+  "require": {
+    "league/oauth2-client": "^2.9",
+    "league/oauth2-google": "^5.0"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+  },
+  "config": {
+    "allow-plugins": {
+    }
+  }
+}

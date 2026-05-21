@@ -63,7 +63,7 @@ export default function LoginModal({ onClose, onOpenRegister }: Props) {
     script.onload = () => {
       if (window.google) {
         window.google.accounts.id.initialize({
-          client_id: "SEU_CLIENT_ID_AQUI",
+          client_id: "727126710458-n0vgbb6k7009rvmb0ljo96jkjs3rnn31.apps.googleusercontent.com",
           callback: (response: any) => {
             console.log("Google token:", response.credential);
           },
