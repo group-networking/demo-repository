@@ -1,9 +1,20 @@
 {
   "name": "vitecodeflow",
-  "private": true,
-  "homepage": "https://group-networking.github.io/demo-repository/",
   "version": "0.0.0",
+  "private": true,
+  "description": "Uma aplicação web moderna desenvolvida com **React**, **TypeScript** e **Vite**, focada em performance, tipagem estática segura e uma experiência de desenvolvimento extremamente rápida.",
+  "homepage": "https://group-networking.github.io/demo-repository/",
+  "bugs": {
+    "url": "https://github.com/group-networking/demo-repository/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/group-networking/demo-repository.git"
+  },
+  "license": "MIT",
+  "author": "GABRIEL LUIZ DA SILVA",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
